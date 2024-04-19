@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+- name: thelook_ecommerce
+# database <> project are interchangeable in dbt-bigquery
+    # project is specific to just dbt-bigquery, whereas database can be used with anything - e.g. Snowflake
+  database: bigquery-public-data
+  tables:
+  - name: inventory_items
+  - name: order_items
+  - name: orders
+  - name: products
+  - name: users
