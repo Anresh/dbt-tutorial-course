@@ -1,0 +1,11 @@
+{
+    "workbench.colorTheme": "Default Dark Modern",
+    "security.workspace.trust.untrustedFiles": "open",
+    "terminal.integrated.env.windows": {
+        "DBT_PROFILES_DIR": ".",
+        "BIGQUERY_PROJECT": "    "terminal.integrated.env.windows": {
+        "DBT_PROFILES_DIR": ".",
+        "BIGQUERY_PROJECT": "dbt-udemy-42080"
+    },"
+    },
+}
