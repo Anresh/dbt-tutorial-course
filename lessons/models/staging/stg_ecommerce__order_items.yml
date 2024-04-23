@@ -1,0 +1,54 @@
+version: 2
+
+models:
+  - name: stg_ecommerce__order_items
+    description: ""
+    columns:
+      - name: order_item_id
+        data_type: int64
+        description: ""
+
+      - name: order_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_ecommerce__orders')
+              field: order_id
+        data_type: int64
+        description: ""
+
+      - name: user_id
+        data_type: int64
+        description: ""
+
+      - name: product_id
+        data_type: int64
+        description: ""
+
+      - name: inventory_item_id
+        data_type: int64
+        description: ""
+
+      - name: status
+        data_type: string
+        description: ""
+
+      - name: created_at
+        data_type: timestamp
+        description: ""
+
+      - name: shipped_at
+        data_type: timestamp
+        description: ""
+
+      - name: delivered_at
+        data_type: timestamp
+        description: ""
+
+      - name: returned_at
+        data_type: timestamp
+        description: ""
+
+      - name: sale_price
+        data_type: float64
+        description: ""

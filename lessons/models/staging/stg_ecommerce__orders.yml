@@ -5,16 +5,30 @@ models:
     columns:
       - name: order_id
         data_type: int64
-        description: ""
+        description: "My first table with orders"
+        tests: 
+         - not_null:
+             where: "status != 'Returned'"
+         - unique
 
       - name: user_id
         data_type: int64
-        description: ""
+        description: " description 1"
 
       - name: status
         data_type: string
         description: ""
-
+        tests:
+          - not_null
+          - accepted_values:
+              name: unexpected_order_status # We can name our tests to make it easier to give more meaningful errors
+              values:
+                - Processing
+                - Cancelled
+                - Shipped
+                - Complete
+                - Returned
+ 
       - name: gender
         data_type: string
         description: ""

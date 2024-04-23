@@ -1,3 +1,4 @@
+
 WITH source AS (
         SELECT *
 
@@ -13,6 +14,8 @@ SELECT
         returned_at,
         shipped_at,
         delivered_at,
-        num_of_item
-
+        num_of_item as items_count
+        {#-unused columns:
+          inventory_item_id
+        #}
 FROM source
