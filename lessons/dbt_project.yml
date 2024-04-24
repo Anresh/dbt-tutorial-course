@@ -37,4 +37,18 @@ models:
     +persist_docs:
       relation: true
       columns: true
+    +hours_to_expiration: 178
+    
+    marts:
+      # In reality this would only be useful if we had subfolders within marts/staging/intermediate
+      # but this is an illustration how you would apply a group to a folder
+      +group: sales
+    
 
+tests:
+  lessons:
+     severity: warn
+     marts:
+        severity: error
+   
+   

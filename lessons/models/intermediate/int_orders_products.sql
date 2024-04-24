@@ -13,6 +13,7 @@ SELECT
         order_items.order_id,
         order_items.user_id,
         order_items.product_id,
+        order_items.sale_price,
         --product data
         products.product_cost,
         products.product_retail_price,

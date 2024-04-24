@@ -3,9 +3,14 @@ version: 2
 models:
   - name: stg_ecommerce__order_items
     description: ""
+    config:
+      contract:
+        enforced: true
     columns:
       - name: order_item_id
         data_type: int64
+        constraints: 
+          - type: not_null
         description: ""
 
       - name: order_id
