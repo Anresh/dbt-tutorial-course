@@ -9,13 +9,16 @@ order_item_measures AS (
 		SUM(item_profit) AS total_profit,
 		SUM(discount) AS total_discount
 
+        --{%- set departments= ['Men','Women'] -%}
+		{% for department in dbt_utils.get_column_values(table=ref('int_orders_products'), column='product_department') %}
+		SUM(IF(product_department = '{{ department }}', item_sale_price, 0)) AS total_sold_{{ department.lower() }}swear{{"," if not loop.last }}
+{%- endfor %})
 
-	FROM {{ ref('int_orders_products') }}
-	GROUP BY 1
-)
+
 SELECT
     od.order_id,
 	od.created_at AS order_created_at,
+	{{ is_weekend('od.created_at') }} ,
     od.shipped_at AS order_shipped_at,
 	od.delivered_at AS order_delivered_at,
 	od.returned_at AS order_returned_at,

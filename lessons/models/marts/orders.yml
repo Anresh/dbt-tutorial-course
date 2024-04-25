@@ -26,7 +26,7 @@ models:
     # Private - only other models in the same (sales) group can ref() this model
     # Protected - only other models in the same group or project can ref() this model
     # Public - any other model can ref() this model
-    access: private
+    access: protected
 
     columns:
 
